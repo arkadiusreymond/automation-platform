@@ -19,6 +19,7 @@ import java.util.Objects;
 public class TestInstrument {
     private static AppiumDriverLocalService service;
     protected static AndroidDriver<AndroidElement> driver;
+    protected static Kumparan kumparan;
 
     @BeforeSuite
     public void beforeTest() {
@@ -50,6 +51,7 @@ public class TestInstrument {
         capabilities.setCapability("uiautomator2ServerLaunchTimeout", 240000);
 
         driver = new AndroidDriver<>(service.getUrl(), capabilities);
+        kumparan = new Kumparan(driver);
     }
 
     @AfterSuite
