@@ -13,4 +13,15 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    // https://mvnrepository.com/artifact/io.appium/java-client
+    compile group: 'io.appium', name: 'java-client', version: '7.3.0'
+    // https://mvnrepository.com/artifact/org.testng/testng
+    testCompile group: 'org.testng', name: 'testng', version: '7.1.0'
+}
+
+test {
+    useTestNG() {
+        suites 'src/test/testsuites/TestSuite.xml'
+        testLogging.showStandardStreams = true
+    }
 }
