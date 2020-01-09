@@ -1,3 +1,6 @@
+package com.kumparan.testcase;
+
+import com.kumparan.TestInstrument;
 import org.testng.annotations.Test;
 public class SimpleTest extends TestInstrument {
 
