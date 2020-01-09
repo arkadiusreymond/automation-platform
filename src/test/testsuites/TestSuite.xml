@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TestSuite" verbose="1" parallel="methods" thread-count="2">
+
+    <test name="Api Comparator">
+        <classes>
+            <class name="SimpleTest"></class>
+        </classes>
+    </test>
+</suite>
