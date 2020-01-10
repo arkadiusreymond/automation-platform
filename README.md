@@ -105,7 +105,7 @@ export JAVA_HOME=/Library/Java/Home
 source ~/.bash_profile
 ```
 
-6. restart your terminal and run emulator again (Step 1)
+6. restart your terminal
 
 
 
@@ -169,6 +169,9 @@ And then click next
 <img width="505" alt="screen shot 2018-10-22 at 03 10 52" src="https://user-images.githubusercontent.com/11746963/47271917-1e0a1780-d5a8-11e8-841c-725c89984a04.png">
 Click finish
 
-5. Wait a few moments until all the libraries are successfully loaded, the sync process will take a while, if you have finished you can immediately try to run the test, by opening the emulator that we have previously installed.
-If the emulator has been opened you just right-click on the SimpleTest class and select run test
-<img width="458" alt="screen shot 2018-10-22 at 03 15 51" src="https://user-images.githubusercontent.com/11746963/47271946-d637c000-d5a8-11e8-9d22-80ce5dd71256.png"> 
+5. Wait a few moments until all the libraries are successfully loaded, the sync process will take a while, if you have finished you can immediately try to run the test
+
+Simply you can use this command
+```bash
+./gradlew clean test -PsuiteFile=TestSuite.xml
+```
