@@ -245,4 +245,12 @@ public class BasePage {
         driver.launchApp();
         delay(2000);
     }
+
+    public void hideKeyboard() {
+        try {
+            driver.hideKeyboard();
+        } catch (Exception e) {
+            System.out.println("Keyboard already hide");
+        }
+    }
 }

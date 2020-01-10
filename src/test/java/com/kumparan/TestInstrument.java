@@ -12,6 +12,7 @@ import io.appium.java_client.service.local.flags.GeneralServerFlag;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 
 import java.io.File;
@@ -23,7 +24,7 @@ public class TestInstrument {
     protected static Kumparan kumparan;
 
     @BeforeSuite
-    public void beforeTest() {
+    public void beforeSuite() {
         AppiumServiceBuilder builder = new AppiumServiceBuilder();
         builder.usingAnyFreePort();
         builder.withArgument(GeneralServerFlag.LOG_LEVEL, "warn");
@@ -56,10 +57,13 @@ public class TestInstrument {
         kumparan = new Kumparan(driver);
     }
 
-    @AfterClass
-    public void afterClass() {
-        kumparan.forYouPage().goToForYouTab();
+    @BeforeClass
+    public void beforeClass() {
+        kumparan.forYouPage().resetApp();
+        kumparan.forYouPage().delay(3000);
     }
+
+
 
     @AfterSuite
     public void afterSuite() {

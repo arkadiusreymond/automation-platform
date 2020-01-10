@@ -23,4 +23,16 @@ public class KomentarPage extends BasePage {
     public void tapOnSendButton() {
         tapViewWithXpath("//android.view.ViewGroup[@content-desc=\"btn-send-comment\"]");
     }
+
+    public void validateCommentIsExist(String komentar) {
+        Assert.assertTrue(isElementPresentByText(komentar, 20));
+    }
+
+    public void swipeToBottomPage() {
+        for (int i=0;i<=5;i++){
+            delay(1000);
+            swipeUp();
+            delay(1000);
+        }
+    }
 }
