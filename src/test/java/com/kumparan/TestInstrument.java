@@ -45,7 +45,8 @@ public class TestInstrument {
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "android");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9.0");
         capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "");
-        capabilities.setCapability(MobileCapabilityType.FULL_RESET, true);
+        capabilities.setCapability(MobileCapabilityType.FULL_RESET, false);
+        capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
         capabilities.setCapability(AndroidMobileCapabilityType.AUTO_GRANT_PERMISSIONS, true);
         capabilities.setCapability(AndroidMobileCapabilityType.ANDROID_INSTALL_TIMEOUT, 240000);
         capabilities.setCapability("uiautomator2ServerInstallTimeout", 240000);

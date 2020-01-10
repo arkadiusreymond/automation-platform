@@ -10,8 +10,12 @@ public class MenuPage extends BasePage {
         super(driver);
     }
 
-    public void isOnMenuPageBeforeLogin() {
+    public void isOnMenuPageBeforeLoginFirstInstall() {
         Assert.assertTrue(isElementPresentByText("Masuk kumparan menggunakan", 30));
+    }
+
+    public void isOnMenuPageAfterClearCache() {
+        Assert.assertTrue(isElementPresentByText("Login", 30));
     }
 
     public void isPopUpGoogleShow() {
@@ -24,6 +28,10 @@ public class MenuPage extends BasePage {
 
     public void tapOnGooleButton() {
         tapViewContainsText("Google");
+    }
+
+    public void tapOnLoginMenu() {
+        tapViewContainsText("Login");
     }
 
     public void tapOnFacebookButton() {

@@ -213,14 +213,36 @@ public class BasePage {
         element.click();
         element.clear();
         element.sendKeys(value);
-        pressEnterButton();
+    }
+
+    public void typeTextWithXpath(String xpath, String value) {
+        AndroidElement element = findElementWithXpath(xpath);
+        element.click();
+        element.clear();
+        element.sendKeys(value);
     }
 
     public void getElementWithXpath(String xpath) {
         findElementWithXpath(xpath);
     }
 
+
     public void resetApp() {
         driver.resetApp();
+    }
+
+    public void closeApp() {
+        driver.closeApp();
+    }
+
+    public void launchApp() {
+        driver.launchApp();
+    }
+
+    public void clearCache() {
+        driver.closeApp();
+        delay(2000);
+        driver.launchApp();
+        delay(2000);
     }
 }

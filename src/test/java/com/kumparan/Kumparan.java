@@ -28,4 +28,8 @@ public class Kumparan {
 
     public SearchResultPage searchResultPage() {return new SearchResultPage(driver);}
 
+    public LoginPage loginPage() {return new LoginPage(driver);}
+
+    public KomentarPage komentarPage() {return new KomentarPage(driver);}
+
 }

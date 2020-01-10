@@ -2,7 +2,6 @@ package com.kumparan.testcase;
 
 import com.kumparan.TestInstrument;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 public class SeeNewsTest extends TestInstrument {
@@ -15,9 +14,8 @@ public class SeeNewsTest extends TestInstrument {
     @Test
     public void seeHeadLineNews() {
         kumparan.pilihKanalPage().checkFirstAppLoad();
-        kumparan.pilihKanalPage().checkFirstAppLoad();
         kumparan.forYouPage().setHeadlineNewsTitle();
-        kumparan.forYouPage().tapOnHeadlineNews();
+        kumparan.forYouPage().tapOnHeadlineNewsTitle();
         kumparan.newsPage().isOnNewsPage();
         kumparan.newsPage().validateNewsTitle();
     }
@@ -45,7 +43,7 @@ public class SeeNewsTest extends TestInstrument {
     }
     @Test(priority = 3)
     public void seeNewsFromRelatedArticle() {
-        kumparan.forYouPage().tapOnHeadlineNews();
+        kumparan.forYouPage().tapOnHeadlineNewsTitle();
         kumparan.newsPage().isOnNewsPage();
         kumparan.newsPage().swipeToRelatedNewsTitle();
         kumparan.newsPage().setNewsTitle();
@@ -58,6 +56,7 @@ public class SeeNewsTest extends TestInstrument {
     public void seeNewsFromSearch() {
         kumparan.forYouPage().isOnForYouPage();
         kumparan.forYouPage().typeOnSearchBarEditText("buku");
+        kumparan.searchResultPage().pressEnterButton();
         kumparan.searchResultPage().isOnSearchResultPage();
         kumparan.searchResultPage().validateSerachKeyword();
         kumparan.searchResultPage().validateNewsTitleMustContain("buku");
@@ -65,5 +64,16 @@ public class SeeNewsTest extends TestInstrument {
         kumparan.searchResultPage().tapOnNewsTitle();
         kumparan.newsPage().isOnNewsPage();
         kumparan.newsPage().validateNewsTitle();
+    }
+
+    @Test(priority = 5)
+    public void backAfterSeeNewsOnBottom() {
+        kumparan.forYouPage().isOnForYouPage();
+        kumparan.forYouPage().swipeToBottomPage();
+        kumparan.forYouPage().setNewsTitle();
+        kumparan.forYouPage().tapOnNewsTitle();
+        kumparan.newsPage().isOnNewsPage();
+        kumparan.newsPage().pressBackButton();
+        kumparan.forYouPage().valodateNewsTitleOnThumnail();
     }
 }

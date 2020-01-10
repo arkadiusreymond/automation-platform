@@ -15,8 +15,20 @@ public class ForYouPage extends BasePage {
         Assert.assertTrue(isElementPresentByText("Cari di sini...", 30));
     }
 
-    public void tapOnHeadlineNews() {
+    public void tapOnHeadlineNewsTitle() {
         tapViewWithXpath("//android.widget.TextView[@text='HEADLINE']/following-sibling::android.view.ViewGroup/child::android.widget.TextView");
+    }
+
+    public void tapOnNewsTitle() {
+        tapViewWithXpath("(//android.widget.TextView[@content-desc=\"title\"])[2]");
+    }
+
+    public void setNewsTitle() {
+        NewsData.setNewsTitle(getTextFromViewByXpath("(//android.widget.TextView[@content-desc=\"title\"])[2]"));
+    }
+
+    public void valodateNewsTitleOnThumnail() {
+        Assert.assertEquals(getTextFromViewByXpath("(//android.widget.TextView[@content-desc=\"title\"])[2]"), NewsData.getNewsTitle());
     }
 
     public void setHeadlineNewsTitle() {
@@ -30,5 +42,17 @@ public class ForYouPage extends BasePage {
     public void typeOnSearchBarEditText(String value) {
         typeTextWithPlaceHolder("Cari di sini...", value);
         NewsData.setKeyword(value);
+    }
+
+    public void tapOnButtonComment() {
+        tapViewWithXpath("(//android.view.ViewGroup[@content-desc=\"btn-comment\"])[1]");
+    }
+
+    public void swipeToBottomPage() {
+        for (int i=0;i<=5;i++){
+            delay(1000);
+            swipeUp();
+            delay(1000);
+        }
     }
 }
