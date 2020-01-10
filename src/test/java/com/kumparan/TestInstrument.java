@@ -10,6 +10,7 @@ import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
@@ -52,6 +53,11 @@ public class TestInstrument {
 
         driver = new AndroidDriver<>(service.getUrl(), capabilities);
         kumparan = new Kumparan(driver);
+    }
+
+    @AfterClass
+    public void afterClass() {
+        kumparan.forYouPage().goToForYouTab();
     }
 
     @AfterSuite
