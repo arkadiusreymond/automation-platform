@@ -1,9 +1,28 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="TestSuite" verbose="1">
 
-    <test name="Api Comparator">
+    <test name="Login Test">
+        <classes>
+            <class name="com.kumparan.testcase.LoginTest"></class>
+        </classes>
+    </test>
+
+    <test name="Register Test">
+        <classes>
+            <class name="com.kumparan.testcase.RegisterTest"></class>
+        </classes>
+    </test>
+
+    <test name="See News Test">
+        <classes>
+            <class name="com.kumparan.testcase.SeeNewsTest"></class>
+        </classes>
+    </test>
+
+    <test name="Komentar">
         <classes>
             <class name="com.kumparan.testcase.CommentTest"></class>
         </classes>
     </test>
+
 </suite>
