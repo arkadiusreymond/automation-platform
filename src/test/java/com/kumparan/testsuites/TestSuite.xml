@@ -3,7 +3,7 @@
 
     <test name="Api Comparator">
         <classes>
-            <class name="com.kumparan.testcase.CommentTest"></class>
+            <class name="com.kumparan.testcase.RegisterTest"></class>
         </classes>
     </test>
 </suite>

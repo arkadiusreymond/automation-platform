@@ -32,4 +32,8 @@ public class Kumparan {
 
     public KomentarPage komentarPage() {return new KomentarPage(driver);}
 
+    public RegisterPage registerPage() {return new RegisterPage(driver);}
+
+    public VerifikasiPage verifikasiPage() {return new VerifikasiPage(driver);}
+
 }

@@ -29,6 +29,10 @@ public class LoginPage extends BasePage {
         tapViewWithXpath("(//android.widget.TextView[@text='Login'])[2]");
     }
 
+    public void tapOnDaftarSekarang() {
+        tapViewContainsText("Daftar Sekarang!");
+    }
+
     public void validateSnackBarErrorShow() {
         Assert.assertTrue(isElementPresentByText("Email / Password salah", 3));
     }

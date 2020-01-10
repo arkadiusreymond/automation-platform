@@ -1,9 +1,15 @@
 package com.kumparan.testcase;
 
 import com.kumparan.TestInstrument;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 public class CommentTest extends TestInstrument {
+
+    @AfterMethod
+    public void goToForYouTab() {
+        kumparan.newsPage().goToForYouTab();
+    }
 
     @Test
     public void commnetViaThumbnailWithoutLogin() {
@@ -16,5 +22,6 @@ public class CommentTest extends TestInstrument {
         kumparan.komentarPage().typeOnTulisKomentar("tulis tulis");
         kumparan.komentarPage().tapOnSendButton();
         kumparan.loginPage().isOnLoginPage();
+        kumparan.loginPage().login("nanmaidabu", "rahasiadong");
     }
 }
