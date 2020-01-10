@@ -21,7 +21,7 @@ dependencies {
 
 test {
     useTestNG() {
-        suites 'src/test/com.kumparan.testsuites/TestSuite.xml'
+        suites 'src/test/java/com/kumparan/testsuites/TestSuite.xml'
         testLogging.showStandardStreams = true
     }
 }
