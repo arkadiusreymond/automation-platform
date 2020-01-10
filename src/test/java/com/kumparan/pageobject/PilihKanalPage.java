@@ -19,11 +19,11 @@ public class PilihKanalPage extends BasePage{
     }
 
     public void tapOnKanalOtomotif() {
-        tapViewWithTextOnIndex("OFF", 5);
+        tapViewWithTextOnIndex("OFF", 1);
     }
 
     public void tapOnKanalBisnis() {
-        tapViewWithTextOnIndex("OFF", 6);
+        tapViewWithTextOnIndex("OFF", 2);
     }
 
     public void tapOnSelanjutnyaButton() {

@@ -26,6 +26,10 @@ public class MenuPage extends BasePage {
         tapViewContainsText("Google");
     }
 
+    public void tapOnFacebookButton() {
+        tapViewContainsText("Facebook");
+    }
+
     public void isOnMenuPageAfterLogin() {
         Assert.assertTrue(isElementPresentByText("Ubah Profil", 30));
     }

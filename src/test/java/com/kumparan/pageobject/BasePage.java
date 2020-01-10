@@ -3,6 +3,8 @@ package com.kumparan.pageobject;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
@@ -130,5 +132,25 @@ public class BasePage {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public void pressBackButton() {
+        driver.pressKey(new KeyEvent().withKey(AndroidKey.BACK));
+    }
+
+    public void goToForYouTab() {
+        for (int i = 0; i < 5; i++) {
+            try {
+                isElementPresentByText("For You", 2);
+                tapViewContainsText("For You");
+                break;
+            } catch (Exception e) {
+                pressBackButton();
+            }
+        }
+    }
+
+    public void resetApp() {
+        driver.resetApp();
     }
 }
